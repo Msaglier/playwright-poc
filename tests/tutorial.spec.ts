@@ -22,4 +22,12 @@ test.describe('cookies', () => {
     await buttonRefuse.click();
     await expect(buttonRefuse).toBeHidden();
   });
+
+  test('error', async ({ page }) => {
+    const buttonRefuse = page.getByTestId('reject_geoloc_doesnt_exist')
+
+    await expect(buttonRefuse).toBeVisible();
+    await buttonRefuse.click();
+    await expect(buttonRefuse).toBeHidden();
+  });
 });
