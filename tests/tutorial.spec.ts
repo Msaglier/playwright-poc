@@ -8,9 +8,9 @@ test.beforeEach('open journey url', async ({ page }) => {
   await expect(page).toHaveTitle(/Navitia Web Solution/);
 })
 
-test.beforeEach('Accept cookie', async ({ cookiesPage, page }) => {
+test.beforeEach('Choose cookie option', async ({ cookiesPage }) => {
   //fixture
-  await cookiesPage.accept()
+  await cookiesPage.defaultChoice()
 })
 
 test.describe('cookies', () => {
