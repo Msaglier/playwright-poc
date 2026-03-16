@@ -1,5 +1,6 @@
 import { expect } from '@playwright/test' ;
-import { test } from './my-test-w-fixture'
+import { test } from './fixtures';
+//import { test } from './my-test-w-fixture'
 //import { CookiesPage } from './cookies-page';
 
 test.beforeEach('open journey url', async ({ page }) => {
