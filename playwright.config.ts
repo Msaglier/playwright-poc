@@ -36,18 +36,30 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup nws',
+      testMatch: /nws\.setup\.ts/,
+      teardown: 'cleanup nws'
+    },
+    {
+      name:'cleanup nws',
+      testMatch: /nws\.teardown\.ts/,
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome']   },
+      dependencies: ['setup nws'],
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
+      dependencies: ['setup nws'],
     },
 
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
+      dependencies: ['setup nws'],
     },
 
     /* Test against mobile viewports. */
